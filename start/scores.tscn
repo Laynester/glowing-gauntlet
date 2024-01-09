@@ -1,0 +1,158 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfpjr60bo0n1"]
+
+[ext_resource type="Theme" uid="uid://bfqtr4tnqn78v" path="res://assets/ui/theme.tres" id="1_ds3hu"]
+[ext_resource type="Script" path="res://start/scores.gd" id="1_f4dbh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ept48"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w8qd6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ntykh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_es0wc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrffu"]
+
+[node name="HighScores" type="CanvasLayer"]
+script = ExtResource("1_f4dbh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.537255)
+
+[node name="Panel" type="PanelContainer" parent="."]
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.5
+offset_top = -142.5
+offset_right = 143.5
+offset_bottom = 142.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ds3hu")
+
+[node name="Container" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/Container/HBoxContainer"]
+layout_mode = 2
+text = "High scores"
+
+[node name="Labels" type="GridContainer" parent="Panel/Container"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 3
+columns = 4
+
+[node name="Time" type="Button" parent="Panel/Container/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ept48")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w8qd6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ntykh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_es0wc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xrffu")
+text = "Time"
+
+[node name="Enemies" type="Button" parent="Panel/Container/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ept48")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w8qd6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ntykh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_es0wc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xrffu")
+text = "Enemies"
+
+[node name="Rubies" type="Button" parent="Panel/Container/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ept48")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w8qd6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ntykh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_es0wc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xrffu")
+text = "Rubies"
+
+[node name="Rounds" type="Button" parent="Panel/Container/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ept48")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w8qd6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ntykh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_es0wc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xrffu")
+text = "Rounds"
+
+[node name="ColorRect" type="ColorRect" parent="Panel/Container"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="ScoreScroll" type="ScrollContainer" parent="Panel/Container"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Container/ScoreScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Scores" type="HBoxContainer" parent="Panel/Container/ScoreScroll/VBox"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="time" type="Label" parent="Panel/Container/ScoreScroll/VBox/Scores"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+horizontal_alignment = 1
+
+[node name="enemies" type="Label" parent="Panel/Container/ScoreScroll/VBox/Scores"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "30"
+horizontal_alignment = 1
+
+[node name="rubies" type="Label" parent="Panel/Container/ScoreScroll/VBox/Scores"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "10"
+horizontal_alignment = 1
+
+[node name="rounds" type="Label" parent="Panel/Container/ScoreScroll/VBox/Scores"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "fu
+"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel/Container"]
+layout_mode = 2
+text = "OK
+"
+
+[connection signal="pressed" from="Panel/Container/Labels/Time" to="." method="_on_time_pressed"]
+[connection signal="pressed" from="Panel/Container/Labels/Enemies" to="." method="_on_enemies_pressed"]
+[connection signal="pressed" from="Panel/Container/Labels/Rubies" to="." method="_on_rubies_pressed"]
+[connection signal="pressed" from="Panel/Container/Labels/Rounds" to="." method="_on_rounds_pressed"]
+[connection signal="pressed" from="Panel/Container/Button" to="." method="_on_button_pressed"]

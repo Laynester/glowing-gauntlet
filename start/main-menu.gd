@@ -20,3 +20,8 @@ func _ready():
 func _onPlay():
 	Main.goto_scene("res://games/mazerunner/MazeRunner.tscn")
 
+func _on_scores_pressed():
+	var source = ResourceLoader.load("res://start/scores.tscn")
+	var scene = source.instantiate()
+
+	add_child(scene)

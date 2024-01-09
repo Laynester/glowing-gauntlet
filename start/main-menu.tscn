@@ -78,7 +78,13 @@ theme = ExtResource("4_eg8vc")
 text = "Start Run
 "
 
-[node name="Options" type="Button" parent="UI/Interface/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Scores" type="Button" parent="UI/Interface/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_eg8vc")
+text = "High Scores"
+
+[node name="Options2" type="Button" parent="UI/Interface/VBoxContainer/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("4_eg8vc")
 disabled = true
@@ -116,3 +122,4 @@ position = Vector2(104, 24)
 texture = ExtResource("5_a64ii")
 
 [connection signal="pressed" from="UI/Interface/VBoxContainer/MarginContainer/VBoxContainer/Start" to="." method="_onPlay"]
+[connection signal="pressed" from="UI/Interface/VBoxContainer/MarginContainer/VBoxContainer/Scores" to="." method="_on_scores_pressed"]

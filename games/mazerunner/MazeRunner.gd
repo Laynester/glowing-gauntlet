@@ -20,6 +20,7 @@ var rubies = {}
 var astar
 var timerClock
 var ticks = 0
+var round = 1
 var enemies = []
 
 var gameStarted = false
@@ -206,6 +207,8 @@ func enterTube():
 	tween.tween_property(tempCB, "color", Help.hexToColor("ffea05", 1), 0.3).set_trans(Tween.TRANS_LINEAR)
 	tween.tween_callback(resetColor)
 
+	round += 1
+
 func isGameRunning() -> bool:
 	return (gameStarted && !timerClock.is_stopped())
 
@@ -219,6 +222,7 @@ func die():
 	Main.game().tryPlaySound("res://assets/audio/endgame.mp3", false)
 	$MRDeath/texts/ok.connect("pressed", gameOver)
 	$MRDeath.show()
+	Main.Storage.addHighscore(ticks, int(rubyCount), enemyCount, round)
 
 func gameOver(): 
 	Main.backToMenu()

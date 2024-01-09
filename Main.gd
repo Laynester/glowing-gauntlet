@@ -10,7 +10,6 @@ func _ready():
 	goto_scene("res://start/main-menu.tscn")
 
 func goto_scene(path):
-	print(path)
 	var s = ResourceLoader.load(path)
 		
 	queued_scene = s.instantiate()
