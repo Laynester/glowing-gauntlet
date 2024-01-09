@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=3 uid="uid://c214ouryeks5b"]
+
+[ext_resource type="Script" path="res://start/main-menu.gd" id="1_awn8h"]
+[ext_resource type="Texture2D" uid="uid://qshge0jlonn4" path="res://assets/images/tile1.png" id="2_rijiu"]
+[ext_resource type="PackedScene" uid="uid://b8u4jqipraa7g" path="res://start/Logo.tscn" id="3_el2ua"]
+[ext_resource type="Texture2D" uid="uid://cxn815tcymgld" path="res://games/mazerunner/images/borderbg.png" id="4_3hfqq"]
+[ext_resource type="Texture2D" uid="uid://2xy8jegdy77g" path="res://games/mazerunner/images/ruby.png" id="5_a64ii"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ienum"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_awn8h")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="UI"]
+custom_minimum_size = Vector2(1140, 780)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -32.0
+offset_right = 34.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rijiu")
+stretch_mode = 1
+
+[node name="Overlay" type="ColorRect" parent="UI"]
+custom_minimum_size = Vector2(1080, 720)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.537255)
+
+[node name="Interface" type="MarginContainer" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -123.0
+offset_right = 225.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Interface"]
+layout_mode = 2
+
+[node name="Logo" parent="UI/Interface/VBoxContainer" instance=ExtResource("3_el2ua")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Interface/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Interface/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Start" type="Button" parent="UI/Interface/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start Run
+"
+
+[node name="Options" type="Button" parent="UI/Interface/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Rubys" type="NinePatchRect" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.0
+offset_top = 24.0
+offset_right = 66.0
+offset_bottom = 72.0
+grow_horizontal = 2
+texture = ExtResource("4_3hfqq")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="Total" type="Label" parent="UI/Rubys"]
+layout_mode = 2
+offset_left = 8.0
+offset_right = 26.0
+offset_bottom = 48.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.396078)
+theme_override_font_sizes/font_size = 32
+text = "0
+"
+
+[node name="Ruby" type="Sprite2D" parent="UI/Rubys"]
+position = Vector2(104, 24)
+texture = ExtResource("5_a64ii")
+
+[node name="Black" type="Panel" parent="."]
+visible = false
+z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ienum")
+
+[connection signal="pressed" from="UI/Interface/VBoxContainer/MarginContainer/VBoxContainer/Start" to="." method="_onPlay"]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://c47l3f2o1ejak"]
+
+[ext_resource type="Script" path="res://games/mazerunner/MazeRunner.gd" id="1_cyjed"]
+[ext_resource type="Texture2D" uid="uid://b55rbido8rgg1" path="res://games/mazerunner/images/tileset.png" id="2_6iqj1"]
+[ext_resource type="PackedScene" uid="uid://capu1pk6kew0w" path="res://games/mazerunner/Scoreboard.tscn" id="3_v0aaa"]
+[ext_resource type="PackedScene" uid="uid://3m7xrsbijnqy" path="res://games/mazerunner/MRDeath.tscn" id="4_038fl"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kk6o3"]
+polygon = PackedVector2Array(-30, -30, 30, -30, 30, 30, -30, 30)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_118xp"]
+texture = ExtResource("2_6iqj1")
+texture_region_size = Vector2i(60, 60)
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_kk6o3")
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_rhf06"]
+tile_size = Vector2i(60, 60)
+occlusion_layer_0/light_mask = 3
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_118xp")
+
+[node name="Mazerunner" type="Node2D"]
+script = ExtResource("1_cyjed")
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+tile_set = SubResource("TileSet_rhf06")
+format = 2
+layer_0/name = "WALL"
+layer_0/z_index = 2
+layer_1/name = "PATH"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 3
+layer_1/tile_data = PackedInt32Array()
+
+[node name="Scoreboard" parent="." instance=ExtResource("3_v0aaa")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.333333, 0.333333, 0.333333, 1)
+
+[node name="Rubies" type="Node2D" parent="."]
+
+[node name="MRDeath" parent="." instance=ExtResource("4_038fl")]
+visible = false

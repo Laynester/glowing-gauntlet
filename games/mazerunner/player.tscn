@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkndn7okvjjx7"]
+
+[ext_resource type="Script" path="res://games/mazerunner/player.gd" id="1_oqwod"]
+[ext_resource type="Texture2D" uid="uid://c8g4wgbv0g4w5" path="res://games/mazerunner/images/light.png" id="2_466ip"]
+[ext_resource type="PackedScene" uid="uid://bh6g0vp3ewpyh" path="res://player/PlayerSprite.tscn" id="3_msnh8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bgp1v"]
+radius = 8.08823
+
+[node name="player" type="Node2D"]
+script = ExtResource("1_oqwod")
+
+[node name="Player" type="Area2D" parent="." groups=["group"]]
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+z_index = 1
+blend_mode = 2
+shadow_enabled = true
+shadow_color = Color(1, 1, 1, 0)
+texture = ExtResource("2_466ip")
+
+[node name="PlayerSprite" parent="Player" instance=ExtResource("3_msnh8")]
+z_index = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2(2.72, 2.72)
+shape = SubResource("CircleShape2D_bgp1v")
+
+[connection signal="area_entered" from="Player" to="." method="_on_player_area_entered"]

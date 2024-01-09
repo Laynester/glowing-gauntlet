@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://3m7xrsbijnqy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eye7w"]
+bg_color = Color(0.14, 0, 0, 0.537255)
+
+[node name="MRDeath" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eye7w")
+
+[node name="texts" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -20.0
+offset_right = 272.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="message" type="RichTextLabel" parent="texts"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]You died!
+Lasted %time% 
+With %enemies% enemies 
+Collected %rubies% Rubies!
+[/center]"
+fit_content = true
+
+[node name="ok" type="Button" parent="texts"]
+layout_mode = 2
+text = "OK
+"

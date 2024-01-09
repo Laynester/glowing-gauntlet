@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://wbklvsm63ga6"]
+
+[ext_resource type="Script" path="res://games/mazerunner/MREnemy.gd" id="1_7nd00"]
+[ext_resource type="Texture2D" uid="uid://c8g4wgbv0g4w5" path="res://games/mazerunner/images/light.png" id="1_b6ud4"]
+[ext_resource type="Texture2D" uid="uid://dp258hmmdy2d2" path="res://player/circle1.png" id="2_j66nx"]
+[ext_resource type="AudioStream" uid="uid://b3gxjtr5wecvo" path="res://assets/audio/hover_loop.mp3" id="4_vwwwa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pgkcb"]
+
+[node name="MREnemy" type="Area2D" groups=["enemy"]]
+top_level = true
+script = ExtResource("1_7nd00")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+scale = Vector2(2.48, 2.48)
+shape = SubResource("CircleShape2D_pgkcb")
+
+[node name="Light" type="PointLight2D" parent="."]
+blend_mode = 2
+shadow_enabled = true
+texture = ExtResource("1_b6ud4")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+scale = Vector2(1.00649, 0.992308)
+texture = ExtResource("2_j66nx")
+
+[node name="Sounds" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(1, 0.98)
+stream = ExtResource("4_vwwwa")
+autoplay = true
+max_distance = 320.0
