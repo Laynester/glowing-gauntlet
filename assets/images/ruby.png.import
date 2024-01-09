@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgy5ndcoq8t57"
-path="res://.godot/imported/borderbg2.png-694560c9c8795b647aacaf25a7734c00.ctex"
+uid="uid://2xy8jegdy77g"
+path="res://.godot/imported/ruby.png-38bbc93728e417c065cc28eb03054fa8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://games/mazerunner/images/borderbg2.png"
-dest_files=["res://.godot/imported/borderbg2.png-694560c9c8795b647aacaf25a7734c00.ctex"]
+source_file="res://assets/images/ruby.png"
+dest_files=["res://.godot/imported/ruby.png-38bbc93728e417c065cc28eb03054fa8.ctex"]
 
 [params]
 
@@ -25,7 +25,7 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false

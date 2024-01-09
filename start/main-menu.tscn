@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://c214ouryeks5b"]
 
-[ext_resource type="Script" path="res://start/main-menu.gd" id="1_awn8h"]
+[ext_resource type="Script" path="res://scripts/main-menu.gd" id="1_6ilqk"]
 [ext_resource type="Texture2D" uid="uid://qshge0jlonn4" path="res://assets/images/tile1.png" id="2_rijiu"]
 [ext_resource type="PackedScene" uid="uid://b8u4jqipraa7g" path="res://start/Logo.tscn" id="3_el2ua"]
-[ext_resource type="Texture2D" uid="uid://cxn815tcymgld" path="res://games/mazerunner/images/borderbg.png" id="4_3hfqq"]
 [ext_resource type="Theme" uid="uid://bfqtr4tnqn78v" path="res://assets/ui/theme.tres" id="4_eg8vc"]
-[ext_resource type="Texture2D" uid="uid://2xy8jegdy77g" path="res://games/mazerunner/images/ruby.png" id="5_a64ii"]
+[ext_resource type="Texture2D" uid="uid://cxn815tcymgld" path="res://assets/ui/borderbg.png" id="5_kb8fr"]
+[ext_resource type="Texture2D" uid="uid://2xy8jegdy77g" path="res://assets/images/ruby.png" id="6_2u0nf"]
 
 [node name="Main2" type="Control"]
 layout_mode = 3
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_awn8h")
+script = ExtResource("1_6ilqk")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 
@@ -99,7 +99,7 @@ offset_top = 24.0
 offset_right = 66.0
 offset_bottom = 72.0
 grow_horizontal = 2
-texture = ExtResource("4_3hfqq")
+texture = ExtResource("5_kb8fr")
 patch_margin_left = 10
 patch_margin_top = 10
 patch_margin_right = 10
@@ -119,7 +119,7 @@ text = "0
 
 [node name="Ruby" type="Sprite2D" parent="UI/Rubys"]
 position = Vector2(104, 24)
-texture = ExtResource("5_a64ii")
+texture = ExtResource("6_2u0nf")
 
 [connection signal="pressed" from="UI/Interface/VBoxContainer/MarginContainer/VBoxContainer/Start" to="." method="_onPlay"]
 [connection signal="pressed" from="UI/Interface/VBoxContainer/MarginContainer/VBoxContainer/Scores" to="." method="_on_scores_pressed"]

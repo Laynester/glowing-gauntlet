@@ -1,6 +1,6 @@
 extends Node2D
 
-const MazeGeneration = preload("res://games/Maze.gd")
+const MazeGeneration = preload("res://scripts/Maze.gd")
 @onready var tilemap: TileMap = $TileMap
 
 # Tilemap constants
@@ -85,7 +85,7 @@ func spawnRuby(x: int, y: int):
 
 	if isRubyAt(tile): return
 
-	var ruby = preload("res://games/mazerunner/ruby.tscn").instantiate()
+	var ruby = preload("res://game/ruby.tscn").instantiate()
 	ruby.global_position = tile
 	ruby.z_index = 5
 
@@ -101,7 +101,7 @@ func removeRuby(pos: Vector2i):
 
 func spawnPlayer():
 	var tile = randomTile(PATH_LAYER, Vector2i(PATH_TILE, 0))
-	var player = preload("res://games/mazerunner/player.tscn")
+	var player = preload("res://game/player.tscn")
 	if player:
 		var scene = player.instantiate()
 		scene.name = "CHARACTER"
@@ -113,7 +113,7 @@ func spawnPlayer():
 
 func spawnEnemy():
 	var tile = randomTile(PATH_LAYER, Vector2i(PATH_TILE, 0))
-	var enemy = preload("res://games/mazerunner/MREnemy.tscn")
+	var enemy = preload("res://game/MREnemy.tscn")
 	if enemy:
 		var scene = enemy.instantiate()
 		add_child(scene)
@@ -149,7 +149,7 @@ func boomTube():
 	if has_node("TUBE"): return
 
 	var tile = randomTile(PATH_LAYER, Vector2i(PATH_TILE, 0))
-	var spawn = preload("res://games/mazerunner/MRTube.tscn")
+	var spawn = preload("res://game/MRTube.tscn")
 
 	if spawn:
 		var scene = spawn.instantiate()

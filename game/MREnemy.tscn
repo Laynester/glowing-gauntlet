@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://wbklvsm63ga6"]
 
-[ext_resource type="Script" path="res://games/mazerunner/MREnemy.gd" id="1_7nd00"]
-[ext_resource type="Texture2D" uid="uid://c8g4wgbv0g4w5" path="res://games/mazerunner/images/light.png" id="1_b6ud4"]
+[ext_resource type="Script" path="res://scripts/MREnemy.gd" id="1_7nd00"]
+[ext_resource type="Texture2D" uid="uid://c8g4wgbv0g4w5" path="res://assets/images/light.png" id="1_b6ud4"]
 [ext_resource type="Texture2D" uid="uid://dp258hmmdy2d2" path="res://player/circle1.png" id="2_j66nx"]
 [ext_resource type="AudioStream" uid="uid://b3gxjtr5wecvo" path="res://assets/audio/hover_loop.mp3" id="4_vwwwa"]
 

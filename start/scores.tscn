@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bfpjr60bo0n1"]
 
 [ext_resource type="Theme" uid="uid://bfqtr4tnqn78v" path="res://assets/ui/theme.tres" id="1_ds3hu"]
-[ext_resource type="Script" path="res://start/scores.gd" id="1_f4dbh"]
+[ext_resource type="Script" path="res://scripts/scores.gd" id="1_j07qi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ept48"]
 
@@ -14,7 +14,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrffu"]
 
 [node name="HighScores" type="CanvasLayer"]
-script = ExtResource("1_f4dbh")
+script = ExtResource("1_j07qi")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

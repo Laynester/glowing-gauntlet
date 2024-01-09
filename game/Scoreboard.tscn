@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://capu1pk6kew0w"]
 
-[ext_resource type="Texture2D" uid="uid://cxn815tcymgld" path="res://games/mazerunner/images/borderbg.png" id="1_on7qc"]
-[ext_resource type="Texture2D" uid="uid://bgy5ndcoq8t57" path="res://games/mazerunner/images/borderbg2.png" id="3_cvko5"]
-[ext_resource type="Script" path="res://games/mazerunner/Clock.gd" id="4_2ndhv"]
+[ext_resource type="Texture2D" uid="uid://cxn815tcymgld" path="res://assets/ui/borderbg.png" id="1_on7qc"]
+[ext_resource type="Texture2D" uid="uid://bgy5ndcoq8t57" path="res://assets/ui/borderbg2.png" id="3_cvko5"]
+[ext_resource type="Script" path="res://scripts/Clock.gd" id="4_2ndhv"]
 
 [node name="Scoreboard" type="CanvasLayer"]
 

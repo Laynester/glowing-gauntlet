@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://c47l3f2o1ejak"]
 
-[ext_resource type="Script" path="res://games/mazerunner/MazeRunner.gd" id="1_cyjed"]
-[ext_resource type="Texture2D" uid="uid://b55rbido8rgg1" path="res://games/mazerunner/images/tileset.png" id="2_6iqj1"]
-[ext_resource type="PackedScene" uid="uid://capu1pk6kew0w" path="res://games/mazerunner/Scoreboard.tscn" id="3_v0aaa"]
-[ext_resource type="PackedScene" uid="uid://3m7xrsbijnqy" path="res://games/mazerunner/MRDeath.tscn" id="4_038fl"]
+[ext_resource type="Script" path="res://scripts/MazeRunner.gd" id="1_cyjed"]
+[ext_resource type="Texture2D" uid="uid://b55rbido8rgg1" path="res://assets/images/tileset.png" id="2_6iqj1"]
+[ext_resource type="PackedScene" uid="uid://capu1pk6kew0w" path="res://game/Scoreboard.tscn" id="3_v0aaa"]
+[ext_resource type="PackedScene" uid="uid://3m7xrsbijnqy" path="res://game/MRDeath.tscn" id="4_038fl"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kk6o3"]
 polygon = PackedVector2Array(-30, -30, 30, -30, 30, 30, -30, 30)

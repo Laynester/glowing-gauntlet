@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8u4jqipraa7g"]
 
-[ext_resource type="Script" path="res://start/Logo.gd" id="1_jl75w"]
+[ext_resource type="Script" path="res://scripts/Logo.gd" id="1_jl75w"]
 [ext_resource type="Texture2D" uid="uid://b41f0a1dmiaoo" path="res://assets/logo.png" id="2_snsu3"]
 [ext_resource type="Texture2D" uid="uid://dbk5h3fa1yheb" path="res://assets/logo_glow.png" id="3_s00n4"]
 

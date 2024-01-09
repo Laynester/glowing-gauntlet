@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8g4wgbv0g4w5"
-path="res://.godot/imported/light.png-4353eaf2c418692d6e4913e27790d176.ctex"
+uid="uid://cxn815tcymgld"
+path="res://.godot/imported/borderbg.png-eddf94a051e59fe44c4ea7026d48d9f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://games/mazerunner/images/light.png"
-dest_files=["res://.godot/imported/light.png-4353eaf2c418692d6e4913e27790d176.ctex"]
+source_file="res://assets/ui/borderbg.png"
+dest_files=["res://.godot/imported/borderbg.png-eddf94a051e59fe44c4ea7026d48d9f0.ctex"]
 
 [params]
 

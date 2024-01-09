@@ -20,8 +20,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Main="*res://singleton/Game.gd"
-Help="*res://helpers/Help.gd"
+Main="*res://scripts/singleton/Game.gd"
+Help="*res://scripts/helpers/Help.gd"
 
 [display]
 
