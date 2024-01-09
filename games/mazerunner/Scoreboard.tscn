@@ -1,69 +1,88 @@
-[gd_scene load_steps=5 format=3 uid="uid://capu1pk6kew0w"]
+[gd_scene load_steps=4 format=3 uid="uid://capu1pk6kew0w"]
 
 [ext_resource type="Texture2D" uid="uid://cxn815tcymgld" path="res://games/mazerunner/images/borderbg.png" id="1_on7qc"]
-[ext_resource type="Texture2D" uid="uid://2xy8jegdy77g" path="res://games/mazerunner/images/ruby.png" id="2_3p4fa"]
 [ext_resource type="Texture2D" uid="uid://bgy5ndcoq8t57" path="res://games/mazerunner/images/borderbg2.png" id="3_cvko5"]
 [ext_resource type="Script" path="res://games/mazerunner/Clock.gd" id="4_2ndhv"]
 
 [node name="Scoreboard" type="CanvasLayer"]
 
-[node name="Score" type="NinePatchRect" parent="."]
+[node name="Rubies" type="NinePatchRect" parent="."]
 offset_left = 24.0
 offset_top = 24.0
-offset_right = 156.0
-offset_bottom = 72.0
+offset_right = 224.0
+offset_bottom = 84.0
 texture = ExtResource("1_on7qc")
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
+patch_margin_left = 11
+patch_margin_top = 11
+patch_margin_right = 11
+patch_margin_bottom = 16
 
-[node name="Score" type="Label" parent="Score"]
-layout_mode = 2
-offset_left = 8.0
-offset_right = 26.0
+[node name="RUBIES" type="Label" parent="Rubies"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 97.0
 offset_bottom = 48.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.396078)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
+text = "Rubies:"
+vertical_alignment = 1
+
+[node name="Counter" type="Label" parent="Rubies"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 6.0
+offset_right = 190.0
+offset_bottom = 48.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.396078)
+theme_override_font_sizes/font_size = 28
 text = "0
 "
-
-[node name="Ruby" type="Sprite2D" parent="Score"]
-position = Vector2(104, 24)
-texture = ExtResource("2_3p4fa")
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="Enemies" type="NinePatchRect" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -68.0
-offset_top = 24.0
-offset_right = 64.0
-offset_bottom = 72.0
-grow_horizontal = 2
+offset_left = 24.0
+offset_top = 96.0
+offset_right = 224.0
+offset_bottom = 156.0
 texture = ExtResource("1_on7qc")
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
+patch_margin_left = 11
+patch_margin_top = 11
+patch_margin_right = 11
+patch_margin_bottom = 16
 
-[node name="Counter" type="Label" parent="Enemies"]
-layout_mode = 2
-offset_left = 8.0
-offset_right = 26.0
+[node name="RUBIES" type="Label" parent="Enemies"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 97.0
 offset_bottom = 48.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.396078)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
+text = "Enemies:"
+vertical_alignment = 1
+
+[node name="Counter" type="Label" parent="Enemies"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 6.0
+offset_right = 189.0
+offset_bottom = 48.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.396078)
+theme_override_font_sizes/font_size = 28
 text = "0
 "
-
-[node name="Ruby" type="Sprite2D" parent="Enemies"]
-position = Vector2(104, 24)
-texture = ExtResource("2_3p4fa")
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="Clock" type="NinePatchRect" parent="."]
 anchors_preset = 1

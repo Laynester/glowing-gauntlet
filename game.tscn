@@ -1,9 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkvdsr4sckfrc"]
+[gd_scene load_steps=5 format=3 uid="uid://dkvdsr4sckfrc"]
 
-[ext_resource type="PackedScene" uid="uid://c214ouryeks5b" path="res://start/main-menu.tscn" id="1_lirsy"]
+[ext_resource type="Script" path="res://Main.gd" id="1_pur6n"]
+
+[sub_resource type="Animation" id="Animation_gb6pv"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dm18y"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xkbng"]
+_data = {
+"fade_in": SubResource("Animation_gb6pv"),
+"fade_out": SubResource("Animation_dm18y")
+}
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_pur6n")
 
-[node name="Container" type="Node" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
 
-[node name="Start" parent="." instance=ExtResource("1_lirsy")]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xkbng")
+}
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

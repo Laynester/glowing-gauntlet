@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://3m7xrsbijnqy"]
+[gd_scene load_steps=3 format=3 uid="uid://3m7xrsbijnqy"]
+
+[ext_resource type="Theme" uid="uid://bfqtr4tnqn78v" path="res://assets/ui/theme.tres" id="1_yk67p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eye7w"]
 bg_color = Color(0.14, 0, 0, 0.537255)
@@ -38,5 +40,6 @@ fit_content = true
 
 [node name="ok" type="Button" parent="texts"]
 layout_mode = 2
+theme = ExtResource("1_yk67p")
 text = "OK
 "

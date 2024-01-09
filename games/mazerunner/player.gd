@@ -47,7 +47,7 @@ func moveCamera():
 	camera.position.x = playerx
 	camera.position.y = playery
 
-	Main.start().moveAudio(camera.position)
+	Main.game().moveAudio(camera.position)
 
 func move(dir: Vector2):
 	if !hasWalked:

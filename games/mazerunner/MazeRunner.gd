@@ -124,7 +124,7 @@ func spawnEnemy():
 
 func onFirstWalk():
 	spawnEnemy()
-	Main.start().tryPlaySound("res://assets/audio/mazerunner.mp3")
+	Main.game().tryPlaySound("res://assets/audio/mazerunner.mp3")
 	gameStarted = true
 	
 func randomTile(layerIndex: int, atlas: Vector2i): 
@@ -135,14 +135,14 @@ func randomTile(layerIndex: int, atlas: Vector2i):
 	return tiles[ind]
 	
 func addScore(amount: int):
-	var text = $Scoreboard/Score/Score.text
+	var text = $Scoreboard/Rubies/Counter.text
 	var newAmount = int(text) + amount
-	$Scoreboard/Score/Score.text = str(newAmount)
+	$Scoreboard/Rubies/Counter.text = str(newAmount)
 	if newAmount % 10 == 0:
 		boomTube()
 
-	Main.totalRubies += amount
-	Main.saveGame()
+	Main.Storage.totalRubies += amount
+	Main.Storage.saveGame()
 
 func boomTube():
 	if has_node("TUBE"): return
@@ -195,8 +195,8 @@ func enterTube():
 	timerClock.stop()
 	tempCB = ColorRect.new()
 	tempCB.color = Help.hexToColor("ffea05", 0)
-	tempCB.custom_minimum_size = get_viewport_rect().size
-	tempCB.position = Vector2(0,0) - (get_viewport_rect().size / 2)
+	tempCB.custom_minimum_size = Main.game().get_viewport_rect().size
+	tempCB.position = Vector2(0,0) - (Main.game().get_viewport_rect().size / 2)
 	tempCB.z_index = 10
 	tempCB.light_mask = 0
 
@@ -212,14 +212,14 @@ func isGameRunning() -> bool:
 func die():
 	timerClock.stop()
 	var time = $Scoreboard/Clock.getTime()
-	var rubyCount = $Scoreboard/Score/Score.text
+	var rubyCount = $Scoreboard/Rubies/Counter.text
 	var enemyCount = enemies.size()
 	$Scoreboard.hide()
 	$MRDeath/texts/message.text = $MRDeath/texts/message.text.replace("%time%", time).replace("%rubies%", str(rubyCount)).replace("%enemies%", str(enemyCount))
-	Main.start().tryPlaySound("res://assets/audio/endgame.mp3", false)
+	Main.game().tryPlaySound("res://assets/audio/endgame.mp3", false)
 	$MRDeath/texts/ok.connect("pressed", gameOver)
 	$MRDeath.show()
 
 func gameOver(): 
-	Main.start().gameOver()
+	Main.backToMenu()
 
