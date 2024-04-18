@@ -81,6 +81,8 @@ func setTile(x: int, y: int):
 	tilemap.set_cell(WALL_LAYER, Vector2i(x, y), 0, Vector2i(WALL_TILE, 0))
 	
 func spawnRuby(x: int, y: int):
+	if rubies.size() >= 100: return
+
 	var tile = Vector2i(x,y)
 
 	if isRubyAt(tile): return

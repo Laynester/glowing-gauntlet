@@ -4,7 +4,7 @@ var totalRubies = 0
 var scores = []
 
 func loadData():
-	var file = FileAccess.open("user://saved_game.json", FileAccess.READ)
+	var file = FileAccess.open("user://saved_game.dat", FileAccess.READ)
 
 	if file:
 		var contents = file.get_as_text()
@@ -21,7 +21,7 @@ func loadData():
 				scores = data["scores"]
 
 func saveGame():
-	var file = FileAccess.open("user://saved_game.json", FileAccess.WRITE)
+	var file = FileAccess.open("user://saved_game.dat", FileAccess.WRITE)
 
 	if file:
 		var data = JSON.stringify({
